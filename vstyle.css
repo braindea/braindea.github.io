@@ -1,0 +1,115 @@
+
+
+
+BODY
+{
+			background-color: white;
+			color: black;
+			margin-left: 0px;
+			margin-top: 0px
+}
+TABLE
+{
+			background-color: #5b92e5;
+			padding: 7px;
+			border-color: 435eab;
+			margin-left: 0px;
+			margin-top: 0px
+}
+
+p
+{
+			background-color: white;
+			color: black;
+    		text-decoration: none;
+			font-family: "Times New Roman", Times, serif;
+			font-size: 14px
+}
+
+.menu a
+{						
+			color: black;
+			font-size: 14px;
+     		font-weight: bold;
+			font-family: Tahoma;
+    		text-decoration: none
+}
+.menu a:link 	{ 	color: black;
+					text-decoration: none }
+.menu a:active 	{ 	color: red;
+					text-decoration: none }
+.menu a:visited { 	color: black;
+					text-decoration: none }
+.menu a:hover 	{ 	color: red;
+					text-decoration: none }
+
+.Writeup
+{
+			background-color: white;
+			width: 750px;
+			margin-left: 15px;
+			margin-right: 20px;
+			margin-top: 20px;
+			margin-bottom: 10px
+}
+.Writeup p
+{
+			color: #202020;
+			font-family: "Times New Roman", Times, serif;
+			font-size: 18px
+}
+	
+.Writeup a
+{ 	
+			color: blue;
+			text-decoration: none 
+}
+
+.Footing
+{
+			background-color: white;
+			width: 750px;
+			margin-left: 8px;
+			margin-right: 10px;
+			margin-top: 15px;
+			margin-bottom: 20px;
+			color: #101010;
+			font-family: Tahoma;
+			font-size: 14px
+}
+
+.TitleBar
+{
+			color: white;
+			font-size: 14px;
+			font-family: Tahoma;
+    		text-decoration: none
+}
+
+.RightStuff
+{
+			vertical-align: top;
+			position: relative;
+			z-index: 1;
+			background-color: white;
+			width: 130px;
+			margin-left: 4px;
+			margin-right: 4px;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			box-shadow:inset 5px #ff0
+}
+.RightStuff p 
+{
+			color: black;
+			font-family: Tahoma;
+			font-size: 8px;
+			font-weight: normal
+}
+.RightStuff a
+{ 	
+			color: blue;
+			text-decoration: none 
+}
+
+
