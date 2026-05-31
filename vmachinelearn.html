@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Machine Learning | Validien Solutions</title><style>
+    :root { --bg: #f5f4f0; --surface: #ffffff; --surface-soft: #f8fafb; --text: #182027; --muted: #66707a; --line: #d9dde3; --primary: #0b696f; --primary-dark: #084f54; --accent: #e4f1ef; --max: 1160px; --radius: 18px; --shadow: 0 18px 40px rgba(15, 23, 42, 0.08); }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: "Segoe UI", Tahoma, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { color: var(--primary-dark); }
+    img { max-width: 100%; display: block; border-radius: 18px; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    .site-header { position: sticky; top: 0; z-index: 1000; background: rgba(245, 244, 240, 0.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(217, 221, 227, 0.95); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 78px; }
+    .brand { display: flex; align-items: center; gap: 12px; color: var(--text); }
+    .brand-mark { width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center; background: linear-gradient(135deg, var(--primary), #143f45); color: #fff; font-weight: 700; letter-spacing: 0.08em; font-size: 0.82rem; }
+    .brand-text strong { display: block; font-size: 1rem; }
+    .brand-text span { display: block; font-size: 0.82rem; color: var(--muted); }
+    .nav-toggle { display: none; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 10px 14px; font: inherit; color: var(--text); cursor: pointer; }
+    .primary-nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 18px; margin: 0; padding: 0; }
+    .primary-nav a { display: block; padding: 8px 0; color: var(--muted); font-size: 0.95rem; }
+    .primary-nav a:hover, .primary-nav a.active { color: var(--text); }
+    .hero { padding: 42px 0 28px; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: stretch; }
+    .panel, .content-card, .side-card, .service-card, .resource-card, .terms-card, .toc-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .panel, .content-card, .terms-card { padding: 28px; }
+    .toc-card, .side-card { padding: 20px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--primary); border-radius: 999px; padding: 8px 12px; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.1; margin: 0 0 16px; color: var(--text); }
+    h1 { font-size: clamp(2.3rem, 4vw, 4rem); margin-top: 16px; }
+    h2 { font-size: clamp(1.6rem, 2vw, 2.2rem); margin-top: 10px; }
+    h3 { font-size: 1.05rem; font-family: "Segoe UI", Tahoma, Arial, sans-serif; margin-bottom: 10px; }
+    .lead { font-size: 1.12rem; color: var(--muted); max-width: 52rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 13px 18px; border-radius: 999px; font-weight: 600; border: 1px solid transparent; transition: 180ms ease; }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-dark); color: #fff; }
+    .btn-secondary { background: #fff; border-color: var(--line); color: var(--text); }
+    .main-section { padding: 10px 0 46px; }
+    .main-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.75fr); gap: 28px; align-items: start; }
+    .content-card p, .terms-card p { margin: 0 0 18px; }
+    .focus-list, .service-list, .bullet-block, .callout { margin: 22px 0 26px; padding: 20px 22px; background: var(--surface-soft); border: 1px solid var(--line); border-radius: 16px; }
+    .bullet-block { border-left: 4px solid var(--primary); border-radius: 0 14px 14px 0; }
+    .focus-list ul, .service-list ul, .bullet-block ul, .terms-card ul { margin: 0; padding-left: 18px; }
+    .focus-list li, .service-list li, .terms-card li { margin: 0 0 10px; }
+    .side-stack, .terms-stack, .resource-grid, .service-grid { display: grid; gap: 18px; }
+    .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 24px 0; }
+    .service-card, .resource-card { padding: 22px; }
+    .service-card p, .resource-card p, .muted { color: var(--muted); }
+    .layout { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr) minmax(260px, 300px); gap: 24px; align-items: start; padding-bottom: 48px; }
+    .toc-card, .side-card { position: sticky; top: 100px; }
+    .toc-card ul, .side-card ul { list-style: none; margin: 0; padding: 0; }
+    .toc-card li, .side-card li { margin: 0 0 10px; }
+    .footer { border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 0.9rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    @media (max-width: 1100px) { .layout { grid-template-columns: 1fr; } .toc-card, .side-card { position: static; } }
+    @media (max-width: 960px) { .hero-grid, .main-grid, .service-grid { grid-template-columns: 1fr; } .nav-toggle { display: inline-flex; } .primary-nav { display: none; position: absolute; top: 78px; left: 0; right: 0; background: var(--surface); border-bottom: 1px solid var(--line); } .primary-nav.open { display: block; } .primary-nav ul { flex-direction: column; gap: 6px; padding: 16px 20px 18px; } .header-inner { position: relative; } }
+    @media (max-width: 640px) { .wrap { padding: 0 14px; } .panel, .content-card, .terms-card, .toc-card, .side-card, .service-card, .resource-card { padding: 20px; } .hero { padding-top: 28px; } .hero-actions { flex-direction: column; align-items: stretch; } }
+</style></head><body><header class="site-header"><div class="wrap header-inner"><a class="brand" href="index.html"><div class="brand-mark">VS</div><div class="brand-text"><strong>Validien Solutions</strong><span>Boutique technology consulting</span></div></a><button class="nav-toggle" type="button" data-nav-toggle aria-label="Toggle navigation">Menu</button><nav class="primary-nav" data-nav><ul>
+          <li><a  href="index.html">Our Business</a></li>
+          <li><a  href="vdbdesign.html">Database Design</a></li>
+          <li><a  href="vintegration.html">Data Integration</a></li>
+          <li><a  href="varchitecture.html">System Architecture</a></li>
+          <li><a  href="vbusintell.html">Business Intelligence</a></li>
+          <li><a class="active" href="vmachinelearn.html">Machine Learning</a></li>
+          <li><a  href="vprojman.html">Project Management</a></li>
+          <li><a  href="vpricing.html">Pricing Models</a></li>
+          <li><a  href="vbusconsult.html">Business Consulting</a></li>
+          <li><a  href="vertindust.html">Vertical Industries</a></li>
+          <li><a  href="vcloud.html">Cloud Consulting</a></li>
+          <li><a  href="vresources.html">Articles &amp; Resources</a></li>
+          <li><a  href="vcontactus.html">Contact Us</a></li>
+          <li><a  href="vtos.html">Terms of Service</a></li>
+</ul></nav></div></header><main><section class="hero"><div class="wrap hero-grid"><div class="panel"><div class="eyebrow">Machine Learning</div><h1>Predictive analytics and machine learning built on clean data, sound modeling, and practical business use.</h1><p class="lead">Validien helps organizations prepare data, evaluate patterns, and support machine learning and predictive analytics initiatives that lead to better forecasting, classification, pricing, and operational insight.</p><div class="hero-actions"><a class="btn btn-primary" href="vcontactus.html">Contact Us</a><a class="btn btn-secondary" href="index.html">Back to Our Business</a></div></div><div class="panel"><img src="vml.jpg" alt="Machine learning and predictive analytics consulting" /></div></div></section><section class="main-section"><div class="wrap main-grid"><article class="content-card"><h2>Data science that starts with the data</h2><p>Machine learning is most useful when it solves a real business problem. Whether the goal is forecasting outcomes, scoring risk, improving pricing models, or detecting patterns in complex data, the quality of the result depends heavily on how well the source data is understood, prepared, and modeled.</p><p>Validien approaches machine learning as part of a broader data science and predictive analytics discipline. That includes statistical modeling, discriminant analysis, predictive methods, and the practical work of transforming source data so that algorithms can interpret categories, directional trends, and real-world complexities correctly.</p><p>We focus on whether a model is useful, supportable, and relevant to the business outcome, not simply whether it produces an interesting statistical result.</p><div class="focus-list"><h3>Machine learning support can include</h3><ul><li>Data preparation, transformation, and feature shaping.</li><li>Predictive analytics for scoring, pricing, and operational forecasting.</li><li>Review of training data quality and model input relevance.</li><li>Validation support for model fit and generalization.</li><li>Pattern analysis and interpretation of statistical relationships.</li><li>Analytics support using SAS, R, and Azure Synapse environments.</li></ul></div></article><aside class="side-stack"><div class="side-card"><h3>Best fit projects</h3><p class="muted">Predictive analytics, scoring models, pricing support, pattern analysis, and data preparation-heavy initiatives.</p></div><div class="side-card"><h3>What matters most</h3><p class="muted">Clean inputs, meaningful variables, careful transformation, proper validation, and business relevance.</p></div><div class="side-card"><h3>Related services</h3><p class="muted">Machine learning often overlaps with data integration, business intelligence, pricing models, and cloud analytics.</p></div></aside></div></section></main><footer class="footer"><div class="wrap footer-inner"><div>Copyright 2022-2026, Validien Solutions LLC</div><div><a href="vtos.html">Terms of Service</a></div></div></footer><script>document.addEventListener('DOMContentLoaded', function () { const toggle = document.querySelector('[data-nav-toggle]'); const nav = document.querySelector('[data-nav]'); if (toggle && nav) { toggle.addEventListener('click', function () { nav.classList.toggle('open'); }); } });</script></body></html>
